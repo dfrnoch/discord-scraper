@@ -11,9 +11,9 @@
 4. In channel write `!scrape <number of messages>`
 
 ## Settings:
-![Settings Showcase](https://i.imgur.com/Bxe3s1Q.png)
+![Settings Showcase](https://camo.githubusercontent.com/91fb91dbef076670a6791ffdea7bcf3591e36643/68747470733a2f2f7768657265732d6d792d74612e636f2f74504a58576c2e706e67)
 
 ## Showcase:
-![Showcase](https://i.imgur.com/iEq1pLO.png)
+![Showcase](https://i.imgur.com/jQEmM9K.png)
 
 `WARN: Using a selfbot is against TOS, It's not my fault if you get a ban when someone reports you`
