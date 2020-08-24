@@ -45,7 +45,7 @@ def Init():
 async def scrape(ctx, amount: int):
     f = open(f"scraped/{ctx.message.channel}.txt","w+", encoding="UTF-8")
     total = amount
-    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages!")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}scraped/{ctx.message.channel}.txt{Fore.LIGHTBLACK_EX}!")
     async for message in ctx.message.channel.history(limit=amount):
         attachments = [attachment.url for attachment in message.attachments if message.attachments]
         try:
@@ -57,10 +57,10 @@ async def scrape(ctx, amount: int):
                 f.write(f"({message.created_at}) {message.author}: {message.content}\n")
                 print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraped message")
         except Exception as e:
-            print(e)
             print(f"{Fore.WHITE}[ {Fore.RED}- {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Cannot scrape message from {Fore.WHITE}{message.author}")
+            print(f"{Fore.WHITE}[ {Fore.RED}E {Fore.WHITE}] {Fore.LIGHTBLACK_EX} {Fore.WHITE}{e}")
             total = total - 1
-    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Succesfully Scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages\n\n")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Succesfully scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages!\n\n")
 
 
 @client.event
