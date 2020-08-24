@@ -9,6 +9,7 @@
 2. Open install.bat
 3. Open start.bat
 4. In channel write `!scrape <number of messages>`
+5. Scraped messages will be saved in `scraped/name-of-channel`
 
 ## Settings:
 ![Settings Showcase](https://camo.githubusercontent.com/91fb91dbef076670a6791ffdea7bcf3591e36643/68747470733a2f2f7768657265732d6d792d74612e636f2f74504a58576c2e706e67)
