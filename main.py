@@ -10,6 +10,7 @@ from discord.ext import (
 )
 
 
+
 client = discord.Client()
 client = commands.Bot(
     command_prefix="!",
@@ -42,17 +43,24 @@ def Init():
 
 @client.command()
 async def scrape(ctx, amount: int):
-    f = open(f"scraped/{ctx.message.channel}.txt","w+")
+    f = open(f"scraped/{ctx.message.channel}.txt","w+", encoding="UTF-8")
     total = amount
     print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages!")
     async for message in ctx.message.channel.history(limit=amount):
+        attachments = [attachment.url for attachment in message.attachments if message.attachments]
         try:
-            f.write(f"[{message.created_at}] {message.author}: {message.content}\n")
-            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraped message")
-        except:
+            if attachments:
+                realatt = attachments[0]
+                f.write(f"({message.created_at}) {message.author}: {message.content} ({realatt})\n")
+                print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraped message")
+            else:
+                f.write(f"({message.created_at}) {message.author}: {message.content}\n")
+                print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraped message")
+        except Exception as e:
+            print(e)
             print(f"{Fore.WHITE}[ {Fore.RED}- {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Cannot scrape message from {Fore.WHITE}{message.author}")
             total = total - 1
-    print(f"\n{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Succesfully Scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages\n\n")
 
 
 @client.event
