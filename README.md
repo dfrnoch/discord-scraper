@@ -2,6 +2,7 @@
 <h3 align="center">Scrapes messages in chanel</h3>
 <h4 align="center">⭐ Don't forget to leave a star! ⭐</h4>
 
+<h5 align="center">🔩 V2 Coming soon! `text visualization and more` 🔩</h4>
 
 
 ## Usage:
