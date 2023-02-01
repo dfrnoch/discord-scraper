@@ -8,6 +8,6 @@
 4. Scraped messages will be saved in `scraped/name-of-channel`
 
 ## Showcase:
-![Showcase](https://i.imgur.com/jQEmM9K.png)
+![Showcase](https://ella-nelson.wheres-my-ta.co/5UmnnJAeQ.png)
 
 `WARN: Using a selfbot is against TOS, It's not my fault if you get a ban when someone reports you`
