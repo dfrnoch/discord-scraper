@@ -76,8 +76,11 @@ async def scrape(ctx, amount: int):
             total = total - 1
         os.system("title [{}/{}] scraping {}".format(count,total,ctx.message.channel))
         count = count + 1
-    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Succesfully scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages!\n\n{Fore.WHITE}")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Successfully scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages!\n\n{Fore.WHITE}")
     os.system("title [DONE] - awaiting command".format(total))
+    print(f"\n{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Bot is ready!")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.YELLOW}{command_prefix}{Fore.CYAN}{cmd}{Fore.WHITE} <number of messages>{Fore.LIGHTBLACK_EX} to log messages\n")
+
 
 
 
