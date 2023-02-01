@@ -24,7 +24,7 @@ with open('config.json') as f:
 token = config.get("token")
 os.system('cls')
 
-print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Discord Chat Scraper made by {Fore.WHITE}LnX{Fore.LIGHTBLACK_EX}, fork by {Fore.ORANGE}TabbyGarf{Fore.LIGHTBLACK_EX})
+print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Discord Chat Scraper made by {Fore.WHITE}LnX{Fore.LIGHTBLACK_EX}, fork by {Fore.YELLOW}TabbyGarf{Fore.LIGHTBLACK_EX}")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX} Licensed under {Fore.WHITE}MIT {Fore.LIGHTBLACK_EX}License")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}You can follow LnX on Github: {Fore.WHITE}https://github.com/lnxcz")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}You can follow me there too:  {Fore.WHITE}https://github.com/TabbyGarf")
