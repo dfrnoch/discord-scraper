@@ -14,6 +14,6 @@
 3. Customizable prefix and command! `default: !scrape`
 
 ## Showcase:
-![Showcase](https://ella-nelson.wheres-my-ta.co/5UmnnJAeQ.png)
+![Showcase](https://ella-nelson.wheres-my-ta.co/5UmLAQpwz.png)
 
 `WARN: Using a selfbot is against TOS, It's not my fault if you get a ban when someone reports you`
