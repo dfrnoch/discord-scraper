@@ -3,15 +3,15 @@
 
 ## Installation:
 1. Run `install.bat` or run in cmd `pip install -r _req.txt`
-2. Config your token in `config.json`
+2. Config your token, prefix and command in `config.json`
 ## Usage:
 1. Open start.bat
 2. In channel/DM write `number <number of messages>`
-3. Scraped messages will be saved in `scraped/name-of-channel`
+3. Scraped messages will be saved in `!scrape/name-of-channel`
 ## Differences between original and fork
 1. Shows progress in command prompt. (Scraped x out of y message(s))
 2. Shows status in window title (waiting command, amount scraped on channel, done)
-3. Stealth command (`number <# of messages>`)
+3. Customizable prefix and command! `default: !scrape`
 
 ## Showcase:
 ![Showcase](https://ella-nelson.wheres-my-ta.co/5UmnnJAeQ.png)
