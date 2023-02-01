@@ -1,16 +1,11 @@
 <h1 align="center">📝 Discord Scraper 📝</h1>
-<h3 align="center">Scrapes messages in chanel</h3>
-<h4 align="center">⭐ Don't forget to leave a star! ⭐</h4>
-
-<h5 align="center">🔩 V2 Coming soon! 🔩</h4>
-
+<h3 align="center">Scrapes messages in channel or private message.</h3>
 
 ## Usage:
-1. Config settings and token in `config.json`
-2. Open install.bat
-3. Open start.bat
-4. In channel write `!scrape <number of messages>`
-5. Scraped messages will be saved in `scraped/name-of-channel`
+1. Config token in `config.json`
+2. Open start.bat
+3. In channel/DM write `number <number of messages>`
+4. Scraped messages will be saved in `scraped/name-of-channel`
 
 ## Showcase:
 ![Showcase](https://i.imgur.com/jQEmM9K.png)
