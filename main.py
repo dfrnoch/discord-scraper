@@ -28,13 +28,13 @@ client.remove_command('help')
 
 os.system('cls')
 
-print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Discord Chat Scraper made by {Fore.WHITE}LnX{Fore.LIGHTBLACK_EX}, fork by {Fore.YELLOW}TabbyGarf{Fore.LIGHTBLACK_EX}")
+print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Discord Chat Scraper made by {Fore.CYAN}LnX{Fore.LIGHTBLACK_EX}, fork by {Fore.YELLOW}TabbyGarf{Fore.LIGHTBLACK_EX}")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Licensed under {Fore.WHITE}MIT {Fore.LIGHTBLACK_EX}License")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}You can follow LnX on Github: {Fore.WHITE}https://github.com/lnxcz")
 print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}You can follow me there too:  {Fore.WHITE}https://github.com/TabbyGarf")
 
 print(f"\n{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Bot is ready!")
-print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.WHITE}{command_prefix}{cmd} <number of messages>{Fore.LIGHTBLACK_EX} to log messages\n")
+print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.YELLOW}{command_prefix}{Fore.CYAN}{cmd}{Fore.WHITE} <number of messages>{Fore.LIGHTBLACK_EX} to log messages\n")
 os.system("title awaiting command")
 
 def Init():
