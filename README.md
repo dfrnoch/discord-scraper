@@ -7,7 +7,7 @@
 ## Usage:
 1. Open start.bat
 2. In channel/DM write `!scrape <number of messages>/all` or the command in your prompt
-3. Scraped messages will be saved in `scrape/name-of-channel`
+3. Scraped messages will be saved in `scrape/Guild Name/name-of-channel`
 ## Differences between original and fork
 1. Shows progress in command prompt. (Scraped x out of y message(s))
 2. Shows status in window title (waiting command, amount scraped on channel, done)
