@@ -35,6 +35,7 @@ print(f"{Fore.WHITE}[ {Fore.CYAN}§ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}You can fo
 
 print(f"\n{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Bot is ready!")
 print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.YELLOW}{command_prefix}{Fore.CYAN}{cmd}{Fore.WHITE} <number of messages>{Fore.LIGHTBLACK_EX} to log messages\n")
+print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.YELLOW}{command_prefix}{Fore.CYAN}{cmd}{Fore.WHITE} all{Fore.LIGHTBLACK_EX} to log every message\n")
 os.system("title awaiting command")
 
 def Init():
@@ -53,14 +54,29 @@ def Init():
 
 
 @client.command(name=cmd)
-async def scrape(ctx, amount: int):
+async def scrape(ctx, amount: str):
     time = datetime.now()
     ft = time.strftime("%Y%m%d-%H%M%S")
-    f = open(f"scraped/{ctx.message.channel}-{ft}.txt","w+", encoding="UTF-8")
+    if (ctx.message.guild != None):
+        filename = "scraped/{}/{}-{}.txt".format(ctx.message.guild.name,ctx.message.channel,ft)
+    else:
+        filename = "scraped/Direct Messages/{}-{}.txt".format(ctx.message.channel,ft)
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    f = open(filename, "w+", encoding = "UTF-8")
+
     count = 1
-    total = amount
-    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}scraped/{ctx.message.channel}-{ft}.txt{Fore.LIGHTBLACK_EX}!")
-    async for message in ctx.message.channel.history(limit=amount):
+    if amount == "all":
+        all = True
+        print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Counting the amount of messages, this might take a while...")
+        os.system("title counting messages...")
+        amount = len([m async for m in ctx.message.channel.history(limit=None)])
+    amount = int(amount)
+    total = int(amount)
+    if all == True:
+        print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}all{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}{filename}{Fore.LIGHTBLACK_EX}!")
+    else:
+        print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}{filename}{Fore.LIGHTBLACK_EX}!")
+    async for message in ctx.message.channel.history(limit=amount, oldest_first=True):
         attachments = [attachment.url for attachment in message.attachments if message.attachments]
         try:
             if attachments:
@@ -76,10 +92,11 @@ async def scrape(ctx, amount: int):
             total = total - 1
         os.system("title [{}/{}] scraping {}".format(count,total,ctx.message.channel))
         count = count + 1
-    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Successfully scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages!\n\n{Fore.WHITE}")
+    print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Succesfully scraped {Fore.WHITE}{total} {Fore.LIGHTBLACK_EX}messages!\n\n{Fore.WHITE}")
     os.system("title [DONE] - awaiting command".format(total))
     print(f"\n{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Bot is ready!")
     print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Write {Fore.YELLOW}{command_prefix}{Fore.CYAN}{cmd}{Fore.WHITE} <number of messages>{Fore.LIGHTBLACK_EX} to log messages\n")
+
 
 
 
