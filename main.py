@@ -63,20 +63,24 @@ async def scrape(ctx, amount: str):
         filename = "scraped/Direct Messages/{}-{}.txt".format(ctx.message.channel,ft)
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     f = open(filename, "w+", encoding = "UTF-8")
-
     count = 1
+
     if amount == "all":
         all = True
         print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Counting the amount of messages, this might take a while...")
         os.system("title counting messages...")
         amount = len([m async for m in ctx.message.channel.history(limit=None)])
-    amount = int(amount)
+        
+    else:
+        all = False
+    amount = int(amount) 
     total = int(amount)
+
     if all == True:
         print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}all{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}{filename}{Fore.LIGHTBLACK_EX}!")
     else:
         print(f"{Fore.WHITE}[ {Fore.YELLOW}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Scraping {Fore.WHITE}{amount}{Fore.LIGHTBLACK_EX} messages to {Fore.WHITE}{filename}{Fore.LIGHTBLACK_EX}!")
-    async for message in ctx.message.channel.history(limit=amount, oldest_first=True):
+    async for message in ctx.message.channel.history(limit=amount, oldest_first=False):
         attachments = [attachment.url for attachment in message.attachments if message.attachments]
         try:
             if attachments:
