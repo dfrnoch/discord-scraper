@@ -1,21 +1,21 @@
 <h1 align="center">📝 Discord Scraper 📝</h1>
-<h3 align="center">Scrapes messages in chanel</h3>
-<h4 align="center">⭐ Don't forget to leave a star! ⭐</h4>
+<h3 align="center">Scrapes messages in channel or private message.</h3>
 
-<h5 align="center">🔩 V2 Coming soon! 🔩</h4>
+<h3 align="center" color="red">DUE TO DISCORDPY BEING BITCHES AND REMOVING ABILITY TO SELF BOT, THIS SCRAPER DOESNT WORK ANYMORE</h3>
 
-
+## Installation:
+1. Run `install.bat` or run in cmd `pip install -r _req.txt`
+2. Config your token, prefix and command in `config.json`
 ## Usage:
-1. Config settings and token in `config.json`
-2. Open install.bat
-3. Open start.bat
-4. In channel write `!scrape <number of messages>`
-5. Scraped messages will be saved in `scraped/name-of-channel`
-
-## Settings:
-![Settings Showcase](https://camo.githubusercontent.com/91fb91dbef076670a6791ffdea7bcf3591e36643/68747470733a2f2f7768657265732d6d792d74612e636f2f74504a58576c2e706e67)
+1. Open start.bat
+2. In channel/DM write `!scrape <number of messages>/all` or the command in your prompt
+3. Scraped messages will be saved in `scrape/Guild Name/name-of-channel`
+## Differences between original and fork
+1. Shows progress in command prompt. (Scraped x out of y message(s))
+2. Shows status in window title (waiting command, amount scraped on channel, done)
+3. Customizable prefix and command! `default: !scrape`
 
 ## Showcase:
-![Showcase](https://i.imgur.com/jQEmM9K.png)
+![Showcase](https://ella-nelson.wheres-my-ta.co/5UmLAQpwz.png)
 
 `WARN: Using a selfbot is against TOS, It's not my fault if you get a ban when someone reports you`
