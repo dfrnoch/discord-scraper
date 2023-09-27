@@ -1,6 +1,8 @@
 <h1 align="center">📝 Discord Scraper 📝</h1>
 <h3 align="center">Scrapes messages in channel or private message.</h3>
 
+<h3 align="center" color="red">DUE TO DISCORDPY BEING BITCHES AND REMOVING ABILITY TO SELF BOT, THIS SCRAPER DOESNT WORK ANYMORE</h3>
+
 ## Installation:
 1. Run `install.bat` or run in cmd `pip install -r _req.txt`
 2. Config your token, prefix and command in `config.json`
